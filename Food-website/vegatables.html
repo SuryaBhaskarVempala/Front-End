@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vegatables</title>
+    <style>
+        .logo{
+    text-decoration: none;
+    position: relative;
+    left: 150px;
+}
+section{
+    padding: 4.5rem 0 1.5rem;
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style-type: none;
+}
+header{
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    box-shadow: 0 8px 11px rgba(0, 0, 0, 0.15);
+    transition: 5s; 
+}
+.profile{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    cursor: pointer;
+    position: relative;
+    left: -20px;
+}
+.profile img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+.logo{
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: black;
+    column-gap: 00.5rem;
+}
+.logo .bx{
+    font-size: 24px;
+    color: orange;
+}
+.navbar{
+    display: flex;
+    column-gap: 1rem;
+}
+.navbar a{
+    font-size: 1rem;
+    font-weight: 500;
+    color: black;
+    padding: 0.5rem 1rem;
+}
+.navbar a:hover,.navbar .home-active{
+    background: green;
+    border-radius: 5rem;
+    color: rgb(174, 179, 183);
+    transition: 0.5s;
+}
+#menu-icon{
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10001;
+    display: none;
+}
+.container{
+    position: relative;
+    width:100%;
+    min-height: 640px;
+    display: flex;
+    align-items: center;
+    background: url('images/background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.container img{
+    width: 500px;
+    height: 500px;
+    mix-blend-mode: darken;
+    position: absolute;
+   left: 800px;
+   bottom: 100px;
+   border-radius: 60px;
+
+}
+.home-text{
+    position: absolute;
+    top: 200px;
+    left: 100px;
+}
+.home-text span{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: green;
+}
+.home-text h1{
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+}
+.btn{
+    padding: 0.9rem 1.5rem;
+    border-radius: 60px;
+    background: green;
+    color: white;
+}
+.btn .bx{
+    position: relative;
+    top: 3px;
+    left: 7px;
+    padding: 4px;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    border-radius: 50%;
+    background: white;
+}
+.btn:hover{
+    background: rgb(230, 155, 15);
+    transition: 0.2s ease-in;
+}
+#home{
+    scroll-behavior: smooth;
+}
+.categories .heading{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.categories .heading h1{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.categories .heading span{
+    color: grey;
+}
+.categories{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.categories-container{
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    position: relative;
+    right:140px;
+}
+.categories-container .box{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 0.5rem;
+}
+.categories-container .box img{
+    width: 150px;
+    height: 150px;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+    object-position: center;
+    padding: 0 1rem;
+}
+.categories-container .box h2{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.categories-container .box span{
+    font-size: 0.9rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    position: relative;
+    top:-15px;
+}
+.categories-container .box .bx{
+    padding: 10px;
+    background: green;
+    color: white;
+    border-radius: 5rem;
+    display: none;
+}
+.categories-container .box .bx:hover{
+    background:  rgb(216, 162, 62);
+    transition: 0.2s all linear;
+}
+.categories-container .box:hover .bx{
+    display: block;
+    transition: 0.2s all linear;
+}
+.box1{
+    background: #fef4ea;
+}
+.box2{
+    background: #e9f4e3;
+}
+.box3{
+    background: #faeaea;
+}
+.box4{
+    background: #eeeef9;
+}
+.box5{
+    background: #f7f6d7;
+}
+.products .heading{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.products .heading h1{
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+.products .heading span{
+    color: grey;
+}
+.products{
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+   
+
+}
+.products-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(305px,auto));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+.products-container .box{
+    padding:20px;
+    box-shadow: 1px 2px 11px 4px rgb(14 55 54 / 15%);
+}
+.box .bx{
+    cursor: pointer;
+}
+.box:hover{
+    transform: translateY(10px);
+    transition: 0.2s all linear;
+}
+.products-container .box img{
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+}
+.products-container .box span{
+    font-size: 13px;
+    font-weight: 500;
+    color: rgba(62, 62, 62, 0.76);
+}
+.products-container .box h2{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: rgba(0, 0, 0, 0.76);
+}
+.products-container .box .price{
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    color: rgb(244, 177, 52);
+}
+.products-container .box .price span{
+    color: black;
+}
+.products-container .box .bx-cart-alt{
+    position: relative;
+    left: 245px;
+    top: 19px;
+    padding: 10px;
+    background: green;
+    font-size: 20px;
+    color: white;
+    border-radius: 0.5rem 0 0.5rem 0;
+}
+.products-container .box .bx-cart-alt:hover{
+    background: rgb(238, 171, 47);
+}
+.products-container .box .bx-heart{
+    color: rgb(238, 171, 47);
+    font-size: 20px;
+    position: relative;
+    bottom: 330px;
+    left: 200px;
+}
+.products-container .box .discount{
+    background: rgb(238, 171, 47);
+    color: white;
+    padding: 7px 18px;
+    position: relative;
+    bottom: 330px;
+    right: 87px;
+    clip-path: polygon(100% 0%,75% 50%,100% 100%,0 100%,0 50%,0 0);
+}
+.footer .border{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,auto));
+    gap: 1.5rem;
+        border: 1px solid  rgb(149, 149, 149);
+        height: 250px;
+        width: 100%;
+        background:rgb(149, 149, 149);
+        position: relative;
+        top: 30px;
+        padding: 5x;
+        padding-left: 5px;
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+.footer-box p{
+    font-size: 0.938rem;
+    margin: 0.5rem 0 1rem;
+}
+.footer-box  .f{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    letter-spacing: 1.5px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.social .bx{
+    font-size: 2rem;
+    padding: 10px;
+    position: relative;
+    top: 30px;
+    color: rgb(5, 111, 6);
+}
+.footer .border .footer-box .para{
+ font-size: 20px;
+ font-weight: 500;  
+ position: relative;
+ top: 40px;
+ left: 10px;
+ color: white; 
+}
+.footer .border .footer-box .logo1{
+    position: relative;
+    top: 20px;   
+    font-size: 1.7rem;
+    color: rgb(0, 0, 0);
+}
+.footer .border .footer-box .bxs-basket{
+    color: orange;
+}
+.footer .border .footer-box .para1{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+}
+.footer .border .footer-box .f:hover{
+    color: green;
+}
+.footer .border .footer-box .bxs-envelope{
+    font-size: 30px;
+    color: green;
+}
+.footer .border .footer-box .bx-rotate-180{
+    font-size: 30px;
+    color: green;
+    position: relative;
+    bottom: 1px;
+    right: 5px;
+    cursor: pointer;
+}
+.footer .border .footer-box input{
+    border:none;
+    outline:none;
+    padding: 5px 5px;
+    border-radius:5px ;
+    position: relative;
+    bottom: 10px;
+}
+.social .bx:hover{
+    transform: translateX(10px);
+    transition: 0.2s all linear;
+}
+.footer .border .footer-box .submit{
+    cursor: pointer;
+    background:rgb(149, 149, 149);
+    border: none;
+}
+    </style>
+    <link rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+</head>
+<body>
+    <section class="products" id="products">
+        <div class="heading">
+           <h1 class="fruits-heading">Vegatables Available<br><span>15-items</span></h1>
+           <a href="#" class="btn">Shop Now<i class='bx bx-right-arrow-alt' ></i></a>
+        </div>
+        <div class="products-container">
+            <div class="box">
+                <img src="images/v1.webp" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Potato</span>
+                <h3 class="price">30.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v2.jpg" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Tomato</span>
+                <h3 class="price">50.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v3.png.crdownload" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Brinjal</span>
+                <h3 class="price">70.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v4.avif" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Onion</span>
+                <h3 class="price">100.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v5.png.crdownload" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Lady's Finger</span>
+                <h3 class="price">25.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+             <div class="box">
+                <img src="images/v6.avif" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>CauliFlower/span>
+                <h3 class="price">45.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v7.jpg" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Pumpkin</span>
+                <h3 class="price">35.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v8.png.crdownload" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Carrot</span>
+                <h3 class="price">30.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v9.png" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Chilli</span>
+                <h3 class="price">40.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v10.avif" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Cucumber</span>
+                <h3 class="price">20.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v11.jpeg" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Mushroom</span>
+                <h3 class="price">85.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v12.webp" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>BeetRoot</span>
+                <h3 class="price">65.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v13.webp" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Lemon</span>
+                <h3 class="price">20.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v14.jpg" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Braccoli</span>
+                <h3 class="price">65.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+            <div class="box">
+                <img src="images/v15.png" alt="">
+                <h2>Farm fresh organic <br>Vegatables 250g</h2>
+                <span>Green Beans</span>
+                <h3 class="price">65.00/-<span>/kg</span></h3>
+                <i class='bx bx-cart-alt'></i>
+                <i class='bx bx-heart' ></i>
+                <span class="discount">-25%</span>
+            </div>
+        </div>
+    </section>
+    <section class="footer" id="footer">
+        <div class="border">
+            <div class="footer-box">
+                <a href="#" class="logo1"><i class='bx bxs-basket'></i>Hotel RK</a>
+                <p class="para">Beside HighSchool,<br>Near VenkateshWara Theatre,<br>4th Floor,<br>Tanuku</p>
+                <div class="social">
+                    <a href="#"><i class='bx bxl-facebook' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    <a href="#"><i class='bx bxl-youtube' ></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h2>Categories</h2>
+                <a href="fruits.html" class="f">Fruits</a>
+                <a href="vegatables.html" class="f">Vegatables</a>
+                <a href="juices.html" class="f">Jucies</a>
+                <a href="freshnuts.html" class="f">Nuts</a>
+                <a href="spices.html" class="f">Spices</a>
+            </div>
+            <div class="footer-box">
+                <h2>Use Full Links</h2>
+                <a href="" class="f">Payment</a>
+                <a href="" class="f">Terms of Us</a>
+                <a href="" class="f">Return Policy</a>
+            </div>
+            <div class="footer-box">
+                <h2>NewsLetter</h2>
+                <p class="para1">Get 10% Discount with <br>Email NewsLetter</p>
+                <form action="">
+                    <i class='bx bxs-envelope' ></i>
+                    <input type="email" name="email" placeholder="Enter your email"/>
+                    <button type="submit" class="submit"><i class='bx bx-arrow-back bx-rotate-180' ></i></button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

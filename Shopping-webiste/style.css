@@ -1,0 +1,692 @@
+* {
+    margin: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+}
+
+.navbar {
+    background-color: black;
+    height: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 2s ease-out;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 100px;
+}
+
+.logo {
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
+
+.border {
+    border: 1px solid transparent;
+}
+
+.border:hover {
+    border: 1.8px solid white;
+}
+
+.firstp {
+    color: #cccccc;
+    font-size: 0.85rem;
+    margin-left: 15px;
+}
+
+.secondp {
+    margin-left: 3px;
+}
+
+.add-icon {
+    display: flex;
+    align-items: center;
+}
+.search-input{
+    height: 40px;
+    width: 550px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.search-button{
+    height: 40px;
+    width: 50px;
+    position: relative;
+    top: 2.5px;
+    right: 5px;
+    border: none;
+    background-color: rgb(251, 168, 1);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+}
+.search-input:hover{
+    border: 2px solid rgb(251, 168, 1);
+}
+
+.returns {
+    font-size: 12px;
+}
+
+.Orders-a {
+    text-decoration: none;
+    color: white;
+}
+.bx-cart {
+    font-size: 50px;
+}
+
+.nav-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-text {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 8px;
+}
+
+.animation {
+    font-size: 10rem;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    z-index: 1;
+    transition: color 2s ease-in-out 1s;
+}
+
+.para {
+    font-size: 1.5rem;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    z-index: 1;
+    transition: color 2s ease-in-out 1s;
+}
+
+/* Animation for each letter */
+.b {
+    animation: slideInLeft 1.5s ease-out;
+}
+
+.r {
+    animation: slideInTop 1.5s ease-out;
+}
+
+.a {
+    animation: slideInBottom 1.5s ease-out;
+}
+
+.n {
+    animation: slideInTop 1.5s ease-out;
+}
+
+.d {
+    animation: slideInBottom 1.5s ease-out;
+}
+
+.s {
+    animation: slideInRight 1.5s ease-out;
+}
+
+/* Styling for each div */
+.letter {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+.para {
+    animation: slideForPara 2s ease-out;
+}
+
+.body {
+    padding-top: 100px;
+    position: relative;
+    height: 800px;
+    background-color: white; /* Starts with white background */
+    overflow: hidden; /* Ensure the background color is clipped */
+}
+
+/* Background sliding up from the bottom */
+.body::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 50%;
+    width: 0; /* Start at 0 height */
+    background-color: rgb(249, 161, 106);
+    animation: backgroundSlideUp 2s ease-in-out 2s forwards;
+    z-index: 0;
+}
+
+/* Background sliding down from the top */
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 50%;
+    width: 0; /* Start at 0 height */
+    background-color: rgb(249, 161, 106);
+    animation: backgroundSlideDown 2s ease-in-out 2s forwards;
+    z-index: 0;
+}
+
+/* Keyframes for sliding background color from bottom */
+@keyframes backgroundSlideUp {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 100%; /* Fill to the full height of the body section */
+    }
+}
+
+/* Keyframes for sliding background color from top */
+@keyframes backgroundSlideDown {
+    0% {
+        width: 0;
+    }
+
+    100% {
+       width: 100%; /* Fill to the full height of the body section */
+    }
+}
+
+/* Animation for sliding letters */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideForPara {
+    from {
+        transform: translateY(300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInBottom {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(300px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Transition effect to change text color to white */
+body.animation-complete .animation,
+body.animation-complete .para {
+    color: rgb(255, 255, 255);
+}
+ /* Adjust Swiper container to fit 1000px width and 700px height */
+ .swiper-container {
+    width: 1400px;  /* Swiper width */
+    height: 600px;  /* Swiper height */
+    overflow: hidden;  /* Prevent overflow */
+    box-sizing: border-box;
+    position: relative;
+    margin-top: 50px;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+/* Ensure slides are constrained to 1000px wide */
+.swiper-wrapper {
+    width: 1000px; /* Ensure wrapper does not exceed container width */
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    background-color: #ddd;
+    width: 1000px;  /* Each slide exactly 1000px wide */
+    height: 600px;  /* Full height of Swiper */
+}
+
+/* Style the pagination dots */
+.swiper-pagination {
+    bottom: 10px;  /* Position dots within the container */
+}
+
+/* Style for the navigation buttons */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #000;
+    top: 50%;  /* Center buttons vertically */
+    transform: translateY(-50%);
+}
+
+/* Ensure pagination dots are inside the container */
+.swiper-pagination-bullets {
+    bottom: 20px; /* Adjust position inside the container */
+}
+/* Custom slide backgrounds */
+.slide1 {
+    background-image: url(slider3.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: black;
+}
+
+.slide2 {
+    background-image: url(slider4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.slide3 {
+    background-image: url(slider1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+/* Customize navigation buttons */
+.swiper-button-next {
+    color: #000;
+    padding: 10px;
+   
+    margin-right: 70px;
+    z-index: 10; /* Ensure buttons are above other elements */
+}
+
+.swiper-button-prev {
+    color: #000;
+    padding: 10px;
+  
+    margin-left: 70px;
+    z-index: 10; /* Ensure buttons are above other elements */
+}
+
+/* Customize pagination bullets */
+.swiper-pagination-bullet {
+    background-color: #000;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: #ff6b6b;
+}
+
+.products {
+    border: 1px solid black;
+    height: 2000px;
+    background-color: black;
+    margin-top: 80px; /* Ensure there's enough space above */
+    position: relative; /* Ensure stacking context */
+   
+}
+.products-container {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    margin-top: 30px;
+    opacity: 1; /* Initially visible */
+    transform: translateY(0); /* Start at original position */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.products-container.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Hide with downward transition */
+}
+
+.products-container.visible {
+    opacity: 1;
+    transform: translateY(0); /* Show and return to the original position */
+}
+.pants-a,.shirts-a,.tshirts-a,.womenwear-a{
+    color: white;
+    position: relative;
+    top: 160px;
+}
+.pants{
+    background-image: url(p1.jpg);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+.shirts{
+    background-image: url(p2.jpg);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    
+}
+.tshirts{
+    background-image: url(p3.jpg);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+}
+.womenwear{
+    background-image: url(p4.jpg);
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 10px 20px;
+}
+.luxury{
+   border: 1px solid black;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: 10px 20px;
+    color: white;
+}
+a{
+    text-decoration: none;
+}
+.luxury-h1{
+    position: relative;
+    top: 70px;
+}
+.luxury-a{
+    color: white;
+    position: relative;
+   top: 80px;
+}
+.topcollections-h1{
+    color: white;
+    text-align: center;
+    margin-top: 120px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.c1{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    left: 50px;
+    background-image: url(c1.jpg);
+    background-size: cover;
+}
+.c2{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    background-image: url(c2.webp);
+    background-size: cover;
+}
+.c3{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    right: 50px;
+    background-image: url(c3.jpg);
+    background-size: cover;
+}
+.c4{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    position: relative;
+    left: 50px;
+    border-radius: 5px;
+    background-image: url(c4.jpg);
+    background-size: cover;
+}
+.c5{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    background-image: url(p1.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+.c6{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    position: relative;
+    right: 50px;
+    background-image: url(c6.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+.c7{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    position: relative;
+    left: 50px;
+    background-image: url(p2.jpg);
+    background-size: cover;
+    border-radius: 5px;
+    background-position: center;
+}
+.c8{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    background-image: url(p3.jpg);
+    background-size: cover;
+    border-radius: 5px;
+}
+.c9{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    position: relative;
+    right: 50px;
+    background-image: url(p4.jpg);
+    background-size: cover;
+    border-radius: 5px;
+    background-position: center;
+}
+.collections{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,auto));
+    gap: 8rem;
+    margin-top: 5rem;
+    margin-left: 5rem;
+    letter-spacing: 1px;
+}
+.desc{
+    position: relative;
+    top: 420px;
+    left: 30px;
+    
+}
+.price{
+    position: relative;
+    top: 430px;
+    left: 50px; 
+    font-size: 13px;
+}
+.add-to-cart{
+    position: relative;
+    top: 400px;
+    left: 170px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 3px;
+    background-color:  rgb(255, 149, 0);
+    transition: 0.7s;
+}
+.add-to-cart:hover{
+    background-color: rgb(125, 124, 124);
+    color: white;
+}
+.contactus{
+    border: 1px solid #eae8e8;
+    height: 800px;
+    width: 100%;
+    background-color: #eae8e8;
+    text-align: center;
+}
+.contact-h2{
+    margin-top: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+.contact-p{
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+.contact-h1{
+    text-align: center;
+    
+    margin-bottom: 30px;
+    position: relative;
+    top: 50px;
+}
+
+/* Form container */
+.form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+    top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+.form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input fields */
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Submit button */
+.form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    form {
+        width: 100%;
+    }
+}
+footer{
+    background-color: black;
+    height: 70px;
+    color: white;
+    text-align: center;
+}
+footer .container{
+    position: relative;
+    top: 25px;
+}
+.customercare{
+    position: relative;
+    bottom: 10px;
+}

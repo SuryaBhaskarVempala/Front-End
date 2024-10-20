@@ -1,0 +1,339 @@
+* {
+    margin: 0;
+    font-family: Arial;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    min-height: 100vh;
+    background-color: black;
+}
+
+.navbar {
+    background-color: black;
+    height: 80px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 2s ease-out;
+}
+
+.nav-logo {
+    height: 50px;
+    width: 115px;
+}
+
+.logo-a {
+    font-size: 2.5rem;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+ 
+}
+
+.border {
+    border: 1px solid transparent;
+}
+
+.border:hover {
+    border: 1.8px solid white;
+}
+
+.firstp {
+    color: #cccccc;
+    font-size: 0.85rem;
+    margin-left: 15px;
+}
+
+.secondp {
+    margin-left: 3px;
+}
+
+.add-icon {
+    display: flex;
+    align-items: center;
+}
+.search-input{
+    height: 40px;
+    width: 550px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.search-button{
+    height: 40px;
+    width: 50px;
+    position: relative;
+    top: 2.5px;
+    right: 5px;
+    border: none;
+    background-color: rgb(251, 168, 1);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2rem;
+}
+.search-input:hover{
+    border: 2px solid rgb(251, 168, 1);
+}
+
+.returns {
+    font-size: 12px;
+}
+
+.Orders-a {
+    text-decoration: none;
+    color: white;
+}
+.bx-cart {
+    font-size: 50px;
+}
+
+.nav-cart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-text {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    top: 8px;
+}
+.pants{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px,auto));
+    gap: 8rem;
+    letter-spacing: 1px;
+    background-color: black;
+    height: 1800px;
+}
+
+.desc{
+    position: relative;
+    top: 420px;
+    left: 30px;
+    
+}
+.price{
+    position: relative;
+    top: 430px;
+    left: 50px; 
+    font-size: 13px;
+}
+.add-to-cart{
+    position: relative;
+    top: 400px;
+    left: 170px;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    border: 1px solid transparent;
+    border-radius: 3px;
+    padding: 3px;
+    background-color:  rgb(255, 149, 0);
+    transition: 0.7s;
+}
+.add-to-cart:hover{
+    background-color: rgb(125, 124, 124);
+    color: white;
+}
+.pant-h1{
+    margin-top: 80px;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    height: 100px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.pant1 {
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    left: 130px;
+    background-image: url(luxury1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.pant2{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    left: 70px;
+    background-image: url(luxury2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.5s ease-in-out; /* Smooth scaling */
+}
+.pant3{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    background-image: url(luxury3.jpg);
+    background-size: cover;
+ 
+}
+.pant4{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    position: relative;
+    left:   130px;
+    border-radius: 5px;
+    background-image: url(luxury4.jpg);
+    background-size: cover;
+ 
+}
+.pant5{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    left:   70px;
+    background-image: url(luxury5.jpg);
+    background-size: cover;
+ 
+}
+.pant6{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    background-image: url(luxury6.jpg);
+    background-size: cover;
+ 
+}
+.pant7{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    left:   130px;
+    background-image: url(c1.jpg);
+    background-size: cover;
+ 
+}
+.pant8{
+    border: 1px solid black;
+    height: 400px;
+    width: 300px;
+    border-radius: 5px;
+    position: relative;
+    left:   70px;
+    background-image: url(c6.jpg);
+    background-size: cover;
+ 
+}
+
+
+.contactus{
+    background-color: #cccccc;
+    height: 800px;
+    padding-top:5px;
+    text-align: center;
+}
+.contact-h2{
+    margin-top: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+}
+.contact-p{
+    margin-top: 30px;
+    font-size: 1.1rem;
+}
+.contact-h1{
+    text-align: center;
+    
+    margin-bottom: 30px;
+    position: relative;
+    top: 50px;
+}
+
+/* Form container */
+.form {
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 0 auto;
+    width: 500px;
+    position: relative;
+    top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form labels */
+.form label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input fields */
+.form input[type="text"],
+.form input[type="email"],
+.form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* Submit button */
+.form input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 500px) {
+    form {
+        width: 100%;
+    }
+}
+footer{
+    background-color: black;
+    height: 70px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+footer .container{
+    position: relative;
+    top: 25px;
+}
+.customercare{
+    position: relative;
+    bottom: 10px;
+}
